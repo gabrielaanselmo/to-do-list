@@ -1,6 +1,11 @@
+// Seleção de elementos HTML
+const inputField = document.querySelector(".input-field textarea"),
+  todoLists = document.querySelector(".todoLists"),
+  pendingNum = document.querySelector(".pending-num"),
+  clearButton = document.querySelector(".clear-button");
+
 // Função para carregar tarefas do armazenamento local ao carregar a página
 function loadTasks() {
-  // Carrega as tarefas salvas no armazenamento local
   const savedTasks = JSON.parse(localStorage.getItem("tasks"));
   if (savedTasks) {
     // Define o conteúdo das tarefas carregadas na lista de tarefas
@@ -16,6 +21,7 @@ function loadTasks() {
         taskToComplete.querySelector("input[type='checkbox']").checked = true;
       }
     });
+
     const deletedTasks = JSON.parse(localStorage.getItem("deletedTasks")) || [];
     deletedTasks.forEach((taskId) => {
       const taskToRemove = document.querySelector(`[data-task-id="${taskId}"]`);
@@ -24,6 +30,7 @@ function loadTasks() {
         taskToRemove.remove();
       }
     });
+
     // Atualiza o contador de tarefas pendentes
     allTasks();
   }
@@ -52,21 +59,34 @@ function saveDeletedTasks(taskId) {
   localStorage.setItem("deletedTasks", JSON.stringify(deletedTasks));
 }
 
-// Função para carregar todas as tarefas e atualizar o contador de tarefas pendentes
+window.addEventListener("load", loadTasks);
+
+// Adicione um ouvinte de evento para salvar tarefas sempre que uma tarefa for adicionada ou removida
+todoLists.addEventListener("DOMNodeInserted", saveTasks);
+todoLists.addEventListener("DOMNodeRemoved", (event) => {
+  if (event.target.classList.contains("list")) {
+    const taskId = event.target.getAttribute("data-task-id");
+    saveDeletedTasks(taskId);
+    saveTasks();
+  }
+});
+
+// Função para atualizar o estado das tarefas
 function allTasks() {
   let tasks = document.querySelectorAll(".pending");
   pendingNum.textContent = tasks.length === 0 ? "não" : tasks.length;
   let allLists = document.querySelectorAll(".list");
   if (allLists.length > 0) {
+    // Se houver tarefas, ajusta o estilo do container e habilita o botão de limpar
     todoLists.style.marginTop = "20px";
     clearButton.style.pointerEvents = "auto";
     return;
   }
+  // Caso contrário, remove o estilo e desabilita o botão de limpar
   todoLists.style.marginTop = "0px";
   clearButton.style.pointerEvents = "none";
 }
 
-// Event listener para adicionar uma nova tarefa quando a tecla Enter é pressionada
 inputField.addEventListener("keyup", (e) => {
   let inputVal = inputField.value.trim();
   if (e.key === "Enter" && inputVal.length > 0) {
