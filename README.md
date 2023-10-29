@@ -1,13 +1,23 @@
-# Projeto - Lista de tarefas
-> Status do projeto: Finalizado.
+# Projeto de Gerenciamento de Tarefas
+> Status do projeto: 🎉 Finalizado
 
-## 📋 Sobre o Projeto
-Este projeto é uma aplicação web simples para criar e gerenciar listas de tarefas.
-## 🛠 Funcionalidades
-- **Adicionar Tarefas**: Você pode adicionar novas tarefas digitando o texto no campo de entrada e pressionando "Enter". As tarefas adicionadas são exibidas na lista com a opção de marcar como concluídas ou excluí-las.
-- **Marcar Tarefas como Concluídas**: Você pode marcar uma tarefa como concluída clicando na caixa de seleção ao lado dela. A tarefa será marcada como concluída e movida para a seção de tarefas concluídas.
-- **Excluir Tarefas**: Você pode excluir uma tarefa clicando no ícone de lixeira ao lado dela. A tarefa será removida da lista.
-- **Contador de Tarefas Pendentes**: Um contador exibe o número de tarefas pendentes na lista.
-- **Limpar Tarefas**: Você pode limpar todas as tarefas.
-![image](https://github.com/gabrielaanselmo/to-do-list/assets/112910372/e290d40b-fbb9-465d-a6d9-1be13f2f2064)
-link: https://taskt0d0list.netlify.app/
+## 🗂️ Sobre o Projeto
+Desenvolvi uma aplicação web prática e eficiente destinada a ajudar os usuários a organizarem suas atividades diárias. Através de uma interface intuitiva e limpa, é possível criar e gerenciar listas de tarefas com facilidade.
+
+## 🚀 Funcionalidades
+- **Adição de Tarefas:** Simplesmente digite a tarefa e pressione "Enter" para adicioná-la à sua lista.
+- **Marcação de Tarefas Concluídas:** Clique na caixa ao lado da tarefa para marcá-la como concluída, destacando seu progresso.
+- **Exclusão de Tarefas:** Remova tarefas indesejadas com um clique no ícone de lixeira.
+- **Contagem de Tarefas Pendentes:** Mantenha o controle com um contador que mostra quantas tarefas ainda estão pendentes.
+- **Limpeza da Lista:** Limpe sua lista de tarefas com a opção de remover todas as entradas de uma vez.
+
+## 💻 Tecnologias Utilizadas
+Para desenvolver esta aplicação, optei por uma stack tecnológica focada em simplicidade e eficácia. Abaixo estão as tecnologias que escolhi para compor o projeto:
+- HTML5
+- CSS3
+- JavaScript 
+
+## 📈 Benefícios
+- **Organização Eficiente:** Transforme a gestão de suas tarefas diárias em uma experiência simplificada e agradável.
+- **Acessibilidade:** Acesse sua lista de tarefas a qualquer momento e de qualquer lugar, bastando ter conexão com a internet.
+- **Produtividade:** Aumente sua produtividade com uma ferramenta que o ajuda a manter o foco nas tarefas que realmente importam.
